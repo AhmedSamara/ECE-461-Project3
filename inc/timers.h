@@ -1,0 +1,29 @@
+#ifndef TIMERS_H
+#define TIMERS_H
+#include "MKL25Z4.h"
+
+#define LCD_UPDATE_PERIOD (100)
+
+void Init_PIT(unsigned period);
+void Start_PIT(void);
+void Stop_PIT(void);
+
+void Init_PWM(void);
+void Set_PWM_Values(uint16_t perc1, uint16_t perc2);
+
+void Init_LPTMR(void);
+void Start_LPTMR(void);
+void Stop_LPTMR(void);
+
+
+extern volatile unsigned PIT_interrupt_counter;
+extern volatile unsigned LCD_update_requested;
+
+
+
+#define GREEN_MODE  (0x00)
+#define YELLOW_MODE (0x01)
+#define RED_MODE    (0x02)
+
+#endif
+// *******************************ARM University Program Copyright © ARM Ltd 2013*************************************   
